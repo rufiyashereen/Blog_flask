@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signup Page Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .signup-container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 400px;
+      }
+
+      .signup-container h2 {
+        margin-top: 0;
+        text-align: center;
+        color: #333;
+      }
+
+      .signup-container input[type="text"],
+      .signup-container input[type="password"],
+      .signup-container input[type="submit"],
+      .signup-container textarea{
+        width: calc(100% - 20px);
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      .signup-container input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .signup-container input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      .signup-container form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Adjust margin for submit button */
+      .signup-container input[type="submit"] {
+        margin-top: 20px;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <div class="signup-container">
+      <h2>Signup</h2>
+      <form id="signupForm" method="POST" action="">
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          placeholder="fullname"
+          required
+        />
+        <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="username"
+        required
+      />
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="email"
+          required
+        />
+       
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <textarea 
+        id="bio",
+        name="bio",
+        placeholder="enter your bio"
+        ></textarea>
+        <input type="submit" value="signup" />
+        <div style="margin-left:10px">
+        <p >already user?<span><a href="{{url_for('login')}}">login</a></p>
+        </div>
+      </form>
+    <!--  <p style="text-align:center; margin-top:20px"><a href="/templates/signup.html">new user? create an account</a></p> -->
+    </div>
+  </body>
+</html>

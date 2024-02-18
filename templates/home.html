@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Front Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-center mb-3">
+            <h1>Welcome to My Blog</h1>
+            <a href="{{ url_for('createblog',user_id=user_id)}}" class="btn btn-primary">Create New Blog</a>
+        </div>
+
+        <div class="container my-5">
+          <h1>Welcome,  {{ username}}</h1>
+          <div class="row">
+              {% for post in blog_posts %}
+              <div class="col-md-6">
+                  <div class="card mb-3">
+                      <div class="card-body">
+                          <h5 class="card-title">{{ post[0] }}</h5>
+                          <p class="card-text">{{ post[1] }}</p>
+                      </div>
+                  </div>
+              </div>
+              {% endfor %}
+          </div>
+    </div>
+</body>
+</html>
